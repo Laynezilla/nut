@@ -543,9 +543,6 @@ int instcmd(const char *cmdname, const char *extradata)
 			}
 
 			ret = instcmd("load.on.delay", dstate_getinfo("ups.delay.start"));
-			if (ret != STAT_INSTCMD_HANDLED) {
-				return ret;
-			}
 
 			return instcmd("load.off.delay", dstate_getinfo("ups.delay.shutdown"));
 		}
@@ -559,9 +556,6 @@ int instcmd(const char *cmdname, const char *extradata)
 			}
 
 			ret = instcmd("load.on.delay", "-1");
-			if (ret != STAT_INSTCMD_HANDLED) {
-				return ret;
-			}
 
 			return instcmd("load.off.delay", dstate_getinfo("ups.delay.shutdown"));
 		}
